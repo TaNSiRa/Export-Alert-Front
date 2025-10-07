@@ -5,7 +5,7 @@ import 'package:intl/intl.dart';
 String formatDateTime(String input) {
   if (input.isNotEmpty) {
     DateTime dateTime = DateTime.parse(input);
-    String formatted = DateFormat('dd-MM-yy HH:mm:ss').format(dateTime);
+    String formatted = DateFormat('dd-MM-yy HH:mm').format(dateTime);
     return formatted;
   } else {
     return '';

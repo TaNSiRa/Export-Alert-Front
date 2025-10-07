@@ -7,9 +7,10 @@ import '../../bloc/BlocEvent/LoginEvent.dart';
 import '../../bloc/Cubit/ChangePageEventCUBIT.dart';
 import '../../data/global.dart';
 import '../../mainBody.dart';
-import '../../page/P01ALLCUSTOMER/P01ALLCUSTOMERMAIN.dart';
+import '../../page/P01INPUTDATA/P01INPUTDATAMAIN.dart';
 import '../../page/page1.dart';
 import '../../page/page10.dart';
+import '../../page/page2.dart';
 import '../../page/page3.dart';
 import '../../page/page4.dart';
 import '../../page/page5.dart';
@@ -140,17 +141,17 @@ class Data_Menu_mainmenu extends StatelessWidget {
                 child: Column(
                   children: [
                     menu_normal(
-                      name: "All Customer",
+                      name: "SHIPMENT PROGRESS",
+                      page: const Page2(),
+                      Lv: 1,
+                      icon: Icons.water_drop,
+                    ),
+                    menu_normal(
+                      name: "DATA TABLE",
                       page: const Page1(),
                       Lv: 1,
                       icon: Icons.dashboard,
                     ),
-                    // menu_normal(
-                    //   name: "SALT SPRAY STATUS",
-                    //   page: const Page3(),
-                    //   Lv: 1,
-                    //   icon: Icons.water_drop,
-                    // ),
                     // menu_normal(
                     //   name: "INSTRUMENT ANALYTICS",
                     //   page: const Page9(),

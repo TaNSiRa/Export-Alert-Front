@@ -53,24 +53,25 @@ class Login_Bloc extends Bloc<LoginEvent, String> {
     //       "user or password have some problem", enumNotificationlist.Error);
     // }
     final response = await Dio().post(
-      "${serverG}SAR/login",
+      "$ToServer/02EXPORTALERT/Login",
       data: {
-        "UserName": logindata.userID,
-        "Password": logindata.userPASS,
+        "user_name": logindata.userID,
+        "password": logindata.userPASS,
       },
     );
 
     if (response.statusCode == 200) {
       var databuff = response.data;
-      // print(databuff);
+      print(databuff);
       if (databuff['return'] == 'OK') {
         token =
-            '{"ID":"${databuff['UserName'].toString()}","NAME":"${databuff['NAME'].toString()}","LV":"${databuff['Roleid'].toString()}","Section":"${databuff['Section'].toString()}","Branch":"${databuff['Branch'].toString()}"}';
-        USERDATA.ID = databuff['UserName'].toString();
-        USERDATA.NAME = databuff['NAME'].toString();
-        USERDATA.UserLV = int.parse(databuff['Roleid'].toString());
-        USERDATA.Section = databuff['Section'].toString();
-        USERDATA.Branch = databuff['Branch'].toString();
+            '{"id":"${databuff['user_name'].toString()}","name":"${databuff['name'].toString()}","roleid":"${databuff['roleid'].toString()}","section":"${databuff['section'].toString()}","branch":"${databuff['branch'].toString()}","permission":"${databuff['permission'].toString()}"}';
+        USERDATA.ID = databuff['user_name'].toString();
+        USERDATA.NAME = databuff['name'].toString();
+        USERDATA.UserLV = int.parse(databuff['roleid'].toString());
+        USERDATA.Section = databuff['section'].toString();
+        USERDATA.Branch = databuff['branch'].toString();
+        USERDATA.Permission = databuff['permission'].toString();
       } else {
         token = (prefs.getString('tokenSP') ?? '');
         USERDATA.UserLV = 0;

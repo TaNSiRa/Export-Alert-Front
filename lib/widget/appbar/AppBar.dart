@@ -10,7 +10,7 @@ import '../../bloc/BlocEvent/LoginEvent.dart';
 import '../../bloc/Cubit/ChangePageEventCUBIT.dart';
 import '../../data/global.dart';
 import '../../mainBody.dart';
-import '../../page/P01ALLCUSTOMER/P01ALLCUSTOMERMAIN.dart';
+import '../../page/P01INPUTDATA/P01INPUTDATAMAIN.dart';
 import '../../page/page1.dart';
 // import 'package:tpk_login_arsa_01/script/bloc/login/login_bloc.dart';
 // import 'package:tpk_login_arsa_01/script/bloc/login/login_event.dart';

@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/BlocEvent/02-01-P02GETMASTERDETAIL.dart';
-import 'P02MASTERDETAIL/P02MASTERDETAILMAIN.dart';
+import '../bloc/BlocEvent/02-01-P02SUMMARY.dart';
+import 'P02SUMMARY/P02SUMMARYMAIN.dart';
 
 //---------------------------------------------------------
 
@@ -23,8 +23,8 @@ class Page2blockget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-        create: (_) => P02MASTERDETAILGETDATA_Bloc(),
-        child: BlocBuilder<P02MASTERDETAILGETDATA_Bloc, P02MASTERDETAILGETDATAclass>(
+        create: (_) => P02SUMMARYGETDATA_Bloc(),
+        child: BlocBuilder<P02SUMMARYGETDATA_Bloc, List<P02SUMMARYGETDATAclass>>(
           builder: (context, data) {
             return Page2Body(
               data: data,
@@ -39,10 +39,10 @@ class Page2Body extends StatelessWidget {
     super.key,
     this.data,
   });
-  P02MASTERDETAILGETDATAclass? data;
+  List<P02SUMMARYGETDATAclass>? data;
   @override
   Widget build(BuildContext context) {
-    return P02MASTERDETAILMAIN(
+    return P02SUMMARYMAIN(
       data: data,
     );
   }

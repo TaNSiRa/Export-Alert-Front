@@ -47,7 +47,7 @@ class _P07CHANGEPASSWORDMAINState extends State<P07CHANGEPASSWORDMAIN> {
   Future<bool> _checkOldPassword(String oldPassword) async {
     try {
       final response = await Dio().post(
-        "$ToServer/02MASTERSAR/CheckOldPassword",
+        "$ToServer/02EXPORTALERT/CheckOldPassword",
         data: {
           'UserName': USERDATA.ID,
           'OldPassword': oldPassword,
@@ -88,7 +88,7 @@ class _P07CHANGEPASSWORDMAINState extends State<P07CHANGEPASSWORDMAIN> {
   Future<bool> _updatePassword(String newPassword) async {
     try {
       final response = await Dio().post(
-        "$ToServer/02MASTERSAR/UpdatePassword",
+        "$ToServer/02EXPORTALERT/UpdatePassword",
         data: {
           'UserName': USERDATA.ID,
           'NewPassword': newPassword,
@@ -440,7 +440,7 @@ class _P07CHANGEPASSWORDMAINState extends State<P07CHANGEPASSWORDMAIN> {
                           const SizedBox(height: 10),
                           Text(
                             '• ใช้รหัสผ่านที่มีความยาวอย่างน้อย 6 ตัวอักษร\n'
-                            '• ผสมตัวอักษรพิมพ์ใหญ่ พิมพ์เล็ก ตัวเลข และสัญลักษณ์\n'
+                            '• ผสมตัวอักษรพิมพ์ใหญ่ พิมพ์เล็ก ตัวเลข\n'
                             '• หลีกเลี่ยงการใช้ข้อมูลส่วนตัว เช่น ชื่อ วันเกิด\n'
                             '• เปลี่ยนรหัสผ่านเป็นระยะๆ เพื่อความปลอดภัย',
                             style: TextStyle(

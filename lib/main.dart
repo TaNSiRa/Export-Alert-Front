@@ -60,7 +60,7 @@ class MainContext extends MyApp {
       builder: (_, e) {
         return MaterialApp(
           scrollBehavior: MyCustomScrollBehavior(),
-          title: 'MASTER SAR',
+          title: 'EXPORT ALERT',
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),

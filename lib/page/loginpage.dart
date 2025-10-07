@@ -100,7 +100,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             end: Alignment.bottomRight,
                           ).createShader(bounds),
                           child: const Text(
-                            'MASTER-SAR : LOGIN',
+                            'EXPORT ALERT : LOGIN',
                             style: TextStyle(
                               fontSize: 20.0,
                               fontWeight: FontWeight.bold,
