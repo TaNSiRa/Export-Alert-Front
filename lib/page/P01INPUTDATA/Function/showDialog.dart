@@ -608,7 +608,7 @@ void showAddDialog(BuildContext context) {
   );
 }
 
-void showN2Dialog(BuildContext context, P01INPUTDATAGETDATAclass originalData, {bool? editAction = false}) {
+void showN2Dialog(BuildContext context, P01INPUTDATAGETDATAclass originalData, {bool? editAction}) {
   final data = P01INPUTDATAGETDATAclass.fromJson(originalData.toJson());
   String loadingDate = data.loading_date;
   String etd = data.etd;
@@ -856,7 +856,7 @@ void showN2Dialog(BuildContext context, P01INPUTDATAGETDATAclass originalData, {
                                     } else if (!P01INPUTDATAVAR.stepAction.contains('Receive Booking')) {
                                       P01INPUTDATAVAR.stepAction.add('Receive Booking');
                                     }
-                                    print(P01INPUTDATAVAR.stepAction);
+                                    // print(P01INPUTDATAVAR.stepAction);
                                   });
                                 },
                               ),
@@ -948,7 +948,7 @@ void showN2Dialog(BuildContext context, P01INPUTDATAGETDATAclass originalData, {
                                     } else if (!P01INPUTDATAVAR.stepAction.contains('ETD')) {
                                       P01INPUTDATAVAR.stepAction.add('ETD');
                                     }
-                                    print(P01INPUTDATAVAR.stepAction);
+                                    // print(P01INPUTDATAVAR.stepAction);
                                   });
                                 },
                               ),
@@ -1017,7 +1017,7 @@ void showN2Dialog(BuildContext context, P01INPUTDATAGETDATAclass originalData, {
                                 Expanded(
                                   child: ElevatedButton(
                                     onPressed: () async {
-                                      if (editAction = true) {
+                                      if (editAction == true) {
                                         ConfirmationDialog.show(
                                           context,
                                           icon: Icons.check_circle,
@@ -1080,6 +1080,7 @@ void showN2Dialog(BuildContext context, P01INPUTDATAGETDATAclass originalData, {
                                             updateItemStatus(data);
                                             updateStatusDue(data);
                                             P01INPUTDATAVAR.SendDataToAPI = data.toJson();
+                                            // print(P01INPUTDATAVAR.SendDataToAPI);
                                             await updateN2(context);
                                           },
                                         );
@@ -1189,7 +1190,7 @@ Widget buildCustomField({
               if (labelText == "Estimate Loading date" && value.isNotEmpty) {
                 try {
                   final parts = value.split("-");
-                  print(parts);
+                  // print(parts);
                   final selectedDate = DateTime(
                     int.parse(parts[2]),
                     int.parse(parts[1]),
@@ -1197,7 +1198,7 @@ Widget buildCustomField({
                   );
 
                   final oldParts = loadingDate!.split("-");
-                  print(oldParts);
+                  // print(oldParts);
                   final oldDate = DateTime(
                     int.parse(oldParts[2]),
                     int.parse(oldParts[1]),
@@ -2123,7 +2124,7 @@ Widget _buildHistorySection({
   required String currentValue,
   required List<HistoryItem> histories,
 }) {
-  print(histories);
+  // print(histories);
   return Container(
     padding: const EdgeInsets.all(16),
     decoration: BoxDecoration(

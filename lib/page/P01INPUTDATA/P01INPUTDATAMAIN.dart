@@ -73,7 +73,7 @@ class _P01INPUTDATAMAINState extends State<P01INPUTDATAMAIN> {
     final dataSource = SampleDataSource(
       _datasearch,
       onNextPlan: (item) {
-        if (item.status != 'Book shipment' || item.status != 'Confirm Bill of Loading (B/L)') {
+        if (item.status != 'Book shipment' && item.status != 'Confirm Bill of Loading (B/L)') {
           ConfirmationDialog.show(
             context,
             icon: Icons.next_plan_outlined,
@@ -93,7 +93,7 @@ class _P01INPUTDATAMAINState extends State<P01INPUTDATAMAIN> {
             },
           );
         } else {
-          showN2Dialog(context, item);
+          showN2Dialog(context, item, editAction: false);
         }
       },
       onEditCalendar: (item) {
