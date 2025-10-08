@@ -141,23 +141,24 @@ class Data_Menu_mainmenu extends StatelessWidget {
                 child: Column(
                   children: [
                     menu_normal(
+                      name: "SUMMARY DATA",
+                      page: const Page3(),
+                      Lv: 1,
+                      icon: Icons.bar_chart_rounded,
+                    ),
+                    menu_normal(
                       name: "SHIPMENT PROGRESS",
                       page: const Page2(),
                       Lv: 1,
-                      icon: Icons.water_drop,
+                      icon: Icons.local_shipping_outlined,
                     ),
                     menu_normal(
                       name: "DATA TABLE",
                       page: const Page1(),
                       Lv: 1,
-                      icon: Icons.dashboard,
+                      icon: Icons.table_chart_outlined,
                     ),
-                    // menu_normal(
-                    //   name: "INSTRUMENT ANALYTICS",
-                    //   page: const Page9(),
-                    //   Lv: 1,
-                    //   icon: Icons.analytics_outlined,
-                    // ),
+
                     // menu_dropdown(
                     //   name: "CALENDAR",
                     //   icon: Icons.calendar_today,

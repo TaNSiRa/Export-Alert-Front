@@ -1,20 +1,21 @@
-// // ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable
 
-// import 'package:flutter/material.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
-// import '../bloc/BlocEvent/03-01-P03DATATABLEGETDATA.dart';
-// import 'P3DATATABLE/P03DATATABLEMAIN.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-// //---------------------------------------------------------
+import '../bloc/BlocEvent/03-01-P03SUMMARYMAIL.dart';
+import 'P03SUMMARYMAIL/P03SUMMARYMAILMAIN.dart';
 
-// class Page3 extends StatelessWidget {
-//   const Page3({Key? key}) : super(key: key);
+//---------------------------------------------------------
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Page3blockget();
-//   }
-// }
+class Page3 extends StatelessWidget {
+  const Page3({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return P03SUMMARYMAILMAIN();
+  }
+}
 
 // class Page3blockget extends StatelessWidget {
 //   const Page3blockget({super.key});
@@ -22,9 +23,8 @@
 //   @override
 //   Widget build(BuildContext context) {
 //     return BlocProvider(
-//         create: (_) => P03DATATABLEGETDATA_Bloc(),
-//         child: BlocBuilder<P03DATATABLEGETDATA_Bloc,
-//             List<P03DATATABLEGETDATAclass>>(
+//         create: (_) => P03SUMMARYMAILGETDATA_Bloc(),
+//         child: BlocBuilder<P03SUMMARYMAILGETDATA_Bloc, List<P03SUMMARYMAILGETDATAclass>>(
 //           builder: (context, data) {
 //             return Page3Body(
 //               data: data,
@@ -39,10 +39,10 @@
 //     super.key,
 //     this.data,
 //   });
-//   List<P03DATATABLEGETDATAclass>? data;
+//   List<P03SUMMARYMAILGETDATAclass>? data;
 //   @override
 //   Widget build(BuildContext context) {
-//     return P03DATATABLEMAIN(
+//     return P03SUMMARYMAILMAIN(
 //       data: data,
 //     );
 //   }
