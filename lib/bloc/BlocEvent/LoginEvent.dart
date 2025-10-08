@@ -72,6 +72,8 @@ class Login_Bloc extends Bloc<LoginEvent, String> {
         USERDATA.Section = databuff['section'].toString();
         USERDATA.Branch = databuff['branch'].toString();
         USERDATA.Permission = databuff['permission'].toString();
+        USERDATA.Email = databuff['email'].toString();
+        USERDATA.Status = databuff['status'].toString();
       } else {
         token = (prefs.getString('tokenSP') ?? '');
         USERDATA.UserLV = 0;
@@ -104,17 +106,23 @@ class Login_Bloc extends Bloc<LoginEvent, String> {
       // print(token);
       var databuff = jsonDecode(token);
 
-      USERDATA.ID = databuff['ID'].toString();
-      USERDATA.UserLV = int.parse(databuff['LV'].toString());
-      USERDATA.NAME = databuff['NAME'].toString();
-      USERDATA.Section = databuff['Section'].toString();
-      USERDATA.Branch = databuff['Branch'].toString();
+      USERDATA.ID = databuff['user_name'].toString();
+      USERDATA.NAME = databuff['name'].toString();
+      USERDATA.UserLV = int.parse(databuff['roleid'].toString());
+      USERDATA.Section = databuff['section'].toString();
+      USERDATA.Branch = databuff['branch'].toString();
+      USERDATA.Permission = databuff['permission'].toString();
+      USERDATA.Email = databuff['email'].toString();
+      USERDATA.Status = databuff['status'].toString();
     } else {
       USERDATA.ID = '';
       USERDATA.UserLV = 0;
       USERDATA.NAME = '';
       USERDATA.Section = '';
       USERDATA.Branch = '';
+      USERDATA.Permission = '';
+      USERDATA.Email = '';
+      USERDATA.Status = '';
     }
     emit(token);
   }
@@ -127,6 +135,9 @@ class Login_Bloc extends Bloc<LoginEvent, String> {
     USERDATA.NAME = '';
     USERDATA.Section = '';
     USERDATA.Branch = '';
+    USERDATA.Permission = '';
+    USERDATA.Email = '';
+    USERDATA.Status = '';
 
     tokenSP = prefs.setString("tokenSP", token).then((bool success) {
       return state;
