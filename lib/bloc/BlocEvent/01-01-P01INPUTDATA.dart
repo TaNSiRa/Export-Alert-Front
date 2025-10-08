@@ -1,9 +1,7 @@
 // ignore_for_file: camel_case_types, non_constant_identifier_names, avoid_print, use_build_context_synchronously, file_names
 
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:newmaster/widget/common/Loading.dart';
 import '../../data/global.dart';
 import '../../page/P01INPUTDATA/P01INPUTDATAMAIN.dart';
 import '../../widget/common/ErrorPopup.dart';

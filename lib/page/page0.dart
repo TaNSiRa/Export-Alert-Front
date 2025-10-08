@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'TEST.dart';
-import 'page2.dart';
+import 'page3.dart';
 
 bool isChecked = false;
 
@@ -10,7 +10,7 @@ class Page0 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Page2();
+    return Page3();
   }
 }
 

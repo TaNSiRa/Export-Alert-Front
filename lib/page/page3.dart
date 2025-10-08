@@ -1,9 +1,6 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../bloc/BlocEvent/03-01-P03SUMMARYMAIL.dart';
 import 'P03SUMMARYMAIL/P03SUMMARYMAILMAIN.dart';
 
 //---------------------------------------------------------
